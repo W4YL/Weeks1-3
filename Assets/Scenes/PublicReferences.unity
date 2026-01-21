@@ -371,7 +371,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 632771648}
-  col: {r: 0.53033173, g: 0.42168033, b: 0.8679245, a: 1}
+  col: {r: 0.8025548, g: 0.740566, b: 1, a: 1}
+  barrels:
+  - {fileID: 8245305397469200176, guid: 7325cb2f51d34fb4da5e5c33ebff71db, type: 3}
+  - {fileID: 9055863997953671947, guid: ae3435eb873794f4aad3d12f14a9fc6f, type: 3}
+  - {fileID: 8310752768603522028, guid: 3662a97cdce73b6438721e9cc78fa2a9, type: 3}
+  randomNumber: 0
 --- !u!212 &632771648
 SpriteRenderer:
   m_ObjectHideFlags: 0
