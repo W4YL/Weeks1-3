@@ -22,7 +22,7 @@ public class SpriteChanger : MonoBehaviour
         //}
 
         //get the mouse position
-        Vector2 mousePos = Camera.main.ScreenToViewportPoint(Mouse.current.position.ReadValue());
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         //is it over sprite
         if (spriteRenderer.bounds.Contains(mousePos) == true)
         {
