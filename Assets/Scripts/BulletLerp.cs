@@ -18,6 +18,7 @@ public class BulletLerp : MonoBehaviour
 
     void Update()
     {
+        //Idle state
         if (!activated)
         {
             //Move bullet lerp off screen
