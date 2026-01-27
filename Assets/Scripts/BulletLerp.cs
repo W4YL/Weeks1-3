@@ -20,13 +20,17 @@ public class BulletLerp : MonoBehaviour
     {
         if (!activated)
         {
+            //Move bullet lerp off screen
             transform.position = new Vector2 (-100,0);
 
             //Conditional if player is hovered over by checking its localScale
             if (player.localScale.x <= 0.91f)
             {
-                startPosition = (Vector2)player.position + Random.insideUnitCircle * 2f;
+                //Save an instance of a random position around the player
+                startPosition = (Vector2)player.position + Random.insideUnitCircle * 4f;
+                //Transform object to that position
                 transform.position = startPosition;
+
                 //Debug.Log("Activated");
                 activated = true;
             }
@@ -34,10 +38,12 @@ public class BulletLerp : MonoBehaviour
 
         if (activated)
         {
+            //Lerp functions
             transform.position = Vector2.Lerp(startPosition, enemy.position, curve.Evaluate(t));
             t += Time.deltaTime * speed;
 
-            if (t > 1f)
+            //Reset lerp
+            if (t >= 1f)
             {
                 activated = false;
                 t = 0f;

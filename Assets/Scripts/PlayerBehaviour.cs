@@ -15,7 +15,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         mouseOverlap = false;
 
-        //Primitive hitbox check
+        //Primitive hitbox check between player and mouse position
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         if (mousePos.x > transform.position.x - hbHalfSize &&
             mousePos.x < transform.position.x + hbHalfSize &&
@@ -28,10 +28,12 @@ public class PlayerBehaviour : MonoBehaviour
         //Cleaner if statement for hitbox check
         if (mouseOverlap)
         {
+            //Shrink player slightly
             transform.localScale = Vector3.one * 0.9f;
         }
         else
         {
+            //Return to normal size
             transform.localScale = Vector3.one;
         }
     }

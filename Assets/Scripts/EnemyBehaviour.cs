@@ -19,13 +19,16 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (goingDown)
         {
+            //Enemy moves down
             t += Time.deltaTime * speed;
         }
         else
         {
+            //Enemy moves up
             t -= Time.deltaTime * speed;
         }
 
+        //Determine whether to let the enemy go up or down
         if (t >= 1f)
         {
             t = 1f;
@@ -37,7 +40,7 @@ public class EnemyBehaviour : MonoBehaviour
             goingDown = true;
         }
 
-
-            transform.position = Vector2.Lerp(start.position, end.position, curve.Evaluate(t));
+        //Lerp function
+        transform.position = Vector2.Lerp(start.position, end.position, curve.Evaluate(t));
     }
 }
