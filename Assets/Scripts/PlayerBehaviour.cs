@@ -6,13 +6,11 @@ public class PlayerBehaviour : MonoBehaviour
     float hbHalfSize = 0.45f;
     bool mouseOverlap = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         mouseOverlap = false;

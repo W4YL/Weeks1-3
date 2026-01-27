@@ -7,13 +7,11 @@ public class LinearInterpolation : MonoBehaviour
     public float t = 0;
     public AnimationCurve curve;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         t += Time.deltaTime;
