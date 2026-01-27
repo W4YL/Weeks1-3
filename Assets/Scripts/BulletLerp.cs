@@ -37,15 +37,15 @@ public class BulletLerp : MonoBehaviour
             transform.position = new Vector2 (-100,0);
 
             //Conditional if player is hovered over by checking its localScale
-            //Extra conditional to check whether it's the initial trigger
-            if (player.localScale.x <= 0.91f && !smallPreviously)
+            if (player.localScale.x <= 0.91f)
             {
-                //Start countdown
-                delayTime = true;
-                timer = timerTime;
-
-                //Record and disable initial trigger
-                smallPreviously = true;
+                //Conditional to check whether it's the initial trigger
+                if (!smallPreviously)
+                {
+                    //Start countdown
+                    delayTime = true;
+                    timer = timerTime;
+                }
             }
         }
 
@@ -57,14 +57,19 @@ public class BulletLerp : MonoBehaviour
             //After countdown
             if (timer < 0)
             {
-                //Save an instance of a random position around the player
-                startPosition = (Vector2)player.position + Random.insideUnitCircle * 4f;
-                //Transform object to that position
-                transform.position = startPosition;
+                if (!activated)
+                {
+                    //Save an instance of a random position around the player
+                    startPosition = (Vector2)player.position + Random.insideUnitCircle * 4f;
+                    //Transform object to that position
+                    transform.position = startPosition;
+
+                    //Record and disable initial trigger
+                    smallPreviously = true;
+                }
 
                 //Debug.Log("Activated");
                 activated = true;
-                delayTime = false;
             }
         }
 
@@ -86,6 +91,7 @@ public class BulletLerp : MonoBehaviour
         if (player.localScale.x > 0.99f)
         {
             smallPreviously = false;
+            delayTime = false;
         }
     }
 }
