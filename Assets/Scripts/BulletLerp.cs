@@ -11,6 +11,10 @@ public class BulletLerp : MonoBehaviour
     public float speed;
     Vector2 startPosition;
 
+    public float timerTime;
+    private float timer;
+    private bool delayTime;
+
     void Start()
     {
         
@@ -19,13 +23,27 @@ public class BulletLerp : MonoBehaviour
     void Update()
     {
         //Idle state
-        if (!activated)
+        if (!activated && !delayTime)
         {
             //Move bullet lerp off screen
             transform.position = new Vector2 (-100,0);
 
             //Conditional if player is hovered over by checking its localScale
             if (player.localScale.x <= 0.91f)
+            {
+                //Start countdown
+                delayTime = true;
+                timer = timerTime;
+            }
+        }
+
+        //On countdown
+        if (delayTime)
+        {
+            timer -= Time.deltaTime;
+
+            //After countdown
+            if (timer < 0)
             {
                 //Save an instance of a random position around the player
                 startPosition = (Vector2)player.position + Random.insideUnitCircle * 4f;
@@ -34,6 +52,7 @@ public class BulletLerp : MonoBehaviour
 
                 //Debug.Log("Activated");
                 activated = true;
+                delayTime = false;
             }
         }
 
