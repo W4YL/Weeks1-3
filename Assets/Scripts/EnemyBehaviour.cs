@@ -2,12 +2,14 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
+    //Lerp variables
     public Transform start;
     public Transform end;
     public AnimationCurve curve;
     public float t = 0;
-
     public float speed;
+
+    //Direction check
     private bool goingDown = false;
 
     void Start()

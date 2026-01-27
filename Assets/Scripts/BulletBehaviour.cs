@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class BulletBehaviour : MonoBehaviour
 {
+    //Lerp variables
     public Transform player;
     public Transform bulletLerp;
     public AnimationCurve curve;
     public float t = 0;
-
     public float speed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

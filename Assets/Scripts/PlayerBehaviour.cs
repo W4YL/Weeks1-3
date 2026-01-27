@@ -3,7 +3,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+    //Player hitbox size
     float hbHalfSize = 0.45f;
+
+    //Overlap check
     bool mouseOverlap = false;
 
     void Start()
