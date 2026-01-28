@@ -1328,7 +1328,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   t: 0
   speed: 1
-  timerTime: 0.25
+  timerTime: 0.1
 --- !u!212 &1186729724
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1682,7 +1682,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   t: 0
   speed: 1
-  timerTime: 0.5
+  timerTime: 0.2
 --- !u!212 &1745099362
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1811,7 +1811,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   t: 0
   speed: 1
-  timerTime: 0.75
+  timerTime: 0.3
 --- !u!212 &1847722645
 SpriteRenderer:
   m_ObjectHideFlags: 0
