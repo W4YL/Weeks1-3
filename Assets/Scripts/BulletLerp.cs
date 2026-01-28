@@ -57,6 +57,7 @@ public class BulletLerp : MonoBehaviour
             //After countdown
             if (timer < 0)
             {
+                //Off cooldown trigger
                 if (!activated)
                 {
                     //Save an instance of a random position around the player
@@ -69,10 +70,13 @@ public class BulletLerp : MonoBehaviour
                 }
 
                 //Debug.Log("Activated");
+
+                //Turn on cooldown
                 activated = true;
             }
         }
 
+        //On cooldown behaviour
         if (activated)
         {
             //Lerp functions
@@ -82,15 +86,19 @@ public class BulletLerp : MonoBehaviour
             //Reset lerp
             if (t >= 1f)
             {
+                //Turn off cooldown
                 activated = false;
                 t = 0f;
             }
         }
 
-        //Enable initial trigger again
+        //When player is not hovered over
         if (player.localScale.x > 0.99f)
         {
+            //Enable initial trigger for next hover
             smallPreviously = false;
+
+            //Enable initial trigger countdown again
             delayTime = false;
         }
     }

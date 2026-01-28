@@ -9,15 +9,14 @@ public class BulletBehaviour : MonoBehaviour
     public float t = 0;
     public float speed;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //When bullet lerp is on screen
         if (bulletLerp.position.x > -99f)
         {
             //Debug.Log("BulletAppear");
