@@ -1,5 +1,5 @@
 # Mechanical Drawing - Guided Projectile System
-A code oriented interactive piece simulating guided missile trajectories using linear interpolation and animation curves
+A code-oriented interactive piece simulating guided missile trajectories using linear interpolation and animation curves
 
 ## How to Run
 1. Clone and open the project in Unity (recommended version: 6000.0.60f1)
@@ -15,4 +15,8 @@ A code oriented interactive piece simulating guided missile trajectories using l
 ## What to Look For
 - Bullet lerp (reference points)'s spawning logic
 - Bullet & Bullet lerp's interpolation logic
-- Use of animation curves for movement feel
+- Use of animation curves for anticipatory movement
+
+## Attributions
+This project was forked from a course repository containing only assets and sprite resources.
+All scripting and projectile behaviour were designed and implemented independently.
